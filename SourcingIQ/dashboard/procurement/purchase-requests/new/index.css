@@ -1,0 +1,13 @@
+/* Create purchase request: page-only styles. Form controls live in shared/css/components.css */
+.form { max-width: 900px; }
+.label-like { font-size: var(--text-xs); font-weight: 500; }
+.dropzone { display: grid; gap: var(--space-1); padding: var(--space-5); border: 1px dashed var(--color-border); border-radius: var(--radius-md);
+  background: var(--color-surface-2); color: var(--color-text-muted); font-size: var(--text-xs); cursor: pointer; }
+.dropzone strong { color: var(--color-text); font-size: var(--text-sm); }
+.dropzone:hover, .dropzone.is-over, .dropzone:focus-within { border-color: var(--color-primary); }
+.field:has(#files:focus-visible) .dropzone { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.files { display: flex; flex-direction: column; gap: var(--space-2); margin: 0; padding: 0; list-style: none; font-size: var(--text-xs); }
+.files li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.files button { border: 0; background: none; color: var(--color-text-muted); font-size: var(--text-base); line-height: 1; }
+.form-actions { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.spacer { flex: 1; }

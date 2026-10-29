@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create Purchase Request | SourcingIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../shared/css/tokens.css" />
+  <link rel="stylesheet" href="../../../../shared/css/base.css" />
+  <link rel="stylesheet" href="../../../../shared/css/components.css" />
+  <link rel="stylesheet" href="../../../../shared/css/layout.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body data-title="Create Purchase Request">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content">
+        <a class="back" href="../index.html">&larr; Purchase Request</a>
+        <div class="page-head"><div><h1>Create Purchase Request</h1><p>Tell us what you want and when you need it</p></div></div>
+        <div class="alert alert--error" id="form-error" role="alert" hidden></div>
+
+        <form class="form" id="pr-form" novalidate>
+          <section class="card panel">
+            <header class="panel__head"><h2>Request Details</h2><p>Tell us what you want and when you need it</p></header>
+            <div class="field-row">
+              <div class="field"><label for="item">Item / Product <span class="req">*</span></label>
+                <input class="input" id="item" name="item" type="text" placeholder="e.g. Takeaway packaging boxes" aria-describedby="item-error" />
+                <p class="field__error" id="item-error" hidden></p></div>
+              <fieldset class="field"><legend>Priority <span class="req">*</span></legend>
+                <div class="segmented">
+                  <label><input type="radio" name="priority" value="Normal" checked /><span>Normal</span></label>
+                  <label><input type="radio" name="priority" value="High" /><span>High</span></label>
+                  <label><input type="radio" name="priority" value="Urgent" /><span>Urgent</span></label>
+                </div></fieldset>
+            </div>
+            <div class="field-row">
+              <div class="field"><label for="quantity">Quantity <span class="req">*</span></label>
+                <div class="qty"><input class="input" id="quantity" name="quantity" type="number" min="1" step="1" placeholder="500" aria-describedby="quantity-error" />
+                  <select class="input" id="unit" name="unit" aria-label="Units"></select></div>
+                <p class="field__error" id="quantity-error" hidden></p></div>
+              <div class="field"><label for="requiredBy">Required by <span class="req">*</span></label>
+                <input class="input" id="requiredBy" name="requiredBy" type="date" aria-describedby="requiredBy-error" />
+                <p class="field__error" id="requiredBy-error" hidden></p></div>
+            </div>
+          </section>
+
+          <section class="card panel">
+            <header class="panel__head"><h2>Purchase Information</h2><p>Tell us who this purchase is for and the estimated budget</p></header>
+            <div class="field-row">
+              <div class="field"><label for="department">Department <span class="req">*</span></label>
+                <select class="input" id="department" name="department" aria-describedby="department-error"></select>
+                <p class="field__error" id="department-error" hidden></p></div>
+              <div class="field"><label for="costCentre">Cost centre</label>
+                <select class="input" id="costCentre" name="costCentre"></select></div>
+            </div>
+            <div class="field"><label for="budget">Budget estimate (&#8358;)</label>
+              <input class="input" id="budget" name="budget" type="number" min="0" step="1" placeholder="2500000" aria-describedby="budget-error" />
+              <p class="field__error" id="budget-error" hidden></p></div>
+          </section>
+
+          <section class="card panel">
+            <header class="panel__head"><h2>Specifications &amp; Notes</h2><p>Describe requirements that structured fields can't capture.</p></header>
+            <div class="field"><label for="specifications">Product specifications</label>
+              <textarea class="input" id="specifications" name="specifications" placeholder="Add specifications, preferred brand, size, quality requirements, or other relevant details..."></textarea></div>
+            <div class="field"><label for="notes">Additional notes</label>
+              <textarea class="input" id="notes" name="notes" placeholder="Add any additional information suppliers or the procurement team should know"></textarea></div>
+            <div class="field"><span class="label-like">Attachment</span>
+              <label class="dropzone" id="dropzone" for="files"><strong>Drop files here or browse</strong>
+                <small>Specifications, reference documents or supporting files (PDF, image, Word or Excel, up to 5 MB each)</small></label>
+              <input class="sr-only" id="files" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.xls,.xlsx" />
+              <p class="field__error" id="file-error" role="alert" hidden></p>
+              <ul class="files" id="file-list"></ul></div>
+          </section>
+
+          <div class="form-actions">
+            <a class="btn" href="../index.html">Cancel</a><span class="spacer"></span>
+            <button class="btn" type="submit" value="draft">Save Draft</button>
+            <button class="btn btn--primary" type="submit" value="submit">Submit Request</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

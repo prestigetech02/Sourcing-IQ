@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purchase Request | SourcingIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../../shared/css/tokens.css" />
+  <link rel="stylesheet" href="../../../../shared/css/base.css" />
+  <link rel="stylesheet" href="../../../../shared/css/components.css" />
+  <link rel="stylesheet" href="../../../../shared/css/layout.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body data-title="Purchase Request">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content">
+        <a class="back" href="../index.html">&larr; Purchase Request</a>
+        <div id="head"></div>
+
+        <div class="detail-grid" id="grid">
+          <div class="stack">
+            <section class="card panel"><header class="panel__head"><h2>Purchase Summary</h2></header><div id="summary"></div></section>
+            <section class="card panel"><div id="items"></div></section>
+            <section class="card panel"><header class="panel__head"><h2>Specifications &amp; Notes</h2></header><div id="notes"></div></section>
+            <section class="card panel"><header class="panel__head"><h2>Activity</h2></header><div id="activity"></div></section>
+          </div>
+          <div class="stack">
+            <section class="card panel"><header class="panel__head"><h2>Next Step</h2></header>
+              <div id="next"></div><p class="field__error" id="action-error" role="alert" hidden></p></section>
+            <section class="card panel"><header class="panel__head"><h2>Approval timeline</h2></header><div id="timeline"></div></section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <dialog class="dialog" id="reject-dialog" aria-labelledby="reject-title">
+    <form id="reject-form" class="form" novalidate>
+      <h2 id="reject-title">Reject this request</h2>
+      <div class="field"><label for="reject-reason">Reason <span class="req">*</span></label>
+        <select class="input" id="reject-reason" aria-describedby="reject-reason-error"></select>
+        <p class="field__error" id="reject-reason-error" hidden></p></div>
+      <div class="field"><label for="reject-note">Note <span id="note-req" class="req" hidden>*</span></label>
+        <textarea class="input" id="reject-note" placeholder="Add more detail (optional)" aria-describedby="reject-note-error"></textarea>
+        <p class="field__error" id="reject-note-error" hidden></p></div>
+      <div class="dialog__actions"><button class="btn" type="button" id="reject-cancel">Cancel</button><button class="btn btn--primary" type="submit">Reject request</button></div>
+    </form>
+  </dialog>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

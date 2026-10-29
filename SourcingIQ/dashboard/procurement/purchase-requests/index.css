@@ -1,0 +1,10 @@
+/* Purchase Requests page. Shared pieces (cards, table, pager, badges) live in shared/css. */
+.list-card { padding: var(--space-4); }
+.filters { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
+.filters #search { flex: 1; min-width: 200px; }
+.table a { font-weight: 500; }
+.muted { color: var(--color-text-subtle); }
+.state .btn { margin-top: var(--space-2); }
+
+.table tbody tr { cursor: pointer; }
+.table tbody tr:hover { background: var(--color-surface-2); }

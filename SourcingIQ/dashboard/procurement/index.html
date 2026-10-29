@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | SourcingIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared/css/tokens.css" />
+  <link rel="stylesheet" href="../../shared/css/base.css" />
+  <link rel="stylesheet" href="../../shared/css/components.css" />
+  <link rel="stylesheet" href="../../shared/css/layout.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body data-title="Dashboard">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content">
+        <div class="dash">
+          <div class="page-head">
+            <div><h1 id="welcome">Welcome Back</h1><p>Here's what needs your attention</p></div>
+            <div class="dash-tools">
+              <label class="sr-only" for="range">Date range</label>
+              <select class="input-sm" id="range">
+                <option value="7d">Last 7 days</option>
+                <option value="30d" selected>Last 30 days</option>
+                <option value="90d">Last 90 days</option>
+              </select>
+              <button class="btn" id="export" type="button" disabled>Export</button>
+            </div>
+          </div>
+
+          <div id="dash-error"></div>
+
+          <div id="dash-body">
+            <section class="kpis" id="cards" aria-label="Key figures"></section>
+
+            <div class="dash-row dash-row--top">
+              <section class="card panel">
+                <header class="panel__head panel__head--split">
+                  <div><h2>Spend Overview</h2><p>Purchasing spend over the selected period</p></div>
+                  <div class="legend" id="legend"></div>
+                </header>
+                <div id="spend"></div>
+              </section>
+
+              <section class="card panel">
+                <header class="panel__head"><h2>Spend by category</h2><p>Share of purchasing spend</p></header>
+                <div id="categories"></div>
+                <a class="btn btn--block" href="../../insight/analytics/index.html">View analytics</a>
+              </section>
+            </div>
+
+            <div class="dash-row dash-row--bottom">
+              <section class="card panel">
+                <header class="panel__head"><h2>Recent Price Changes</h2><p>Products with notable changes from pricing</p></header>
+                <div id="prices"></div>
+              </section>
+
+              <section class="card panel">
+                <header class="panel__head"><h2>Performance Alert</h2><p>Supplier and quote issues needing attention</p></header>
+                <div id="alerts"></div>
+              </section>
+
+              <section class="card panel">
+                <header class="panel__head"><h2>Activity</h2><p>Recent activities</p></header>
+                <div id="activity"></div>
+                <a class="btn btn--block" href="#">View all</a>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

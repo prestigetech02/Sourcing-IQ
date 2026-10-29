@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | SourcingIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared/css/tokens.css" />
+  <link rel="stylesheet" href="../../shared/css/base.css" />
+  <link rel="stylesheet" href="../../shared/css/components.css" />
+  <link rel="stylesheet" href="../../shared/css/layout.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body data-title="Dashboard">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content">
+        <div class="fin">
+          <div class="fin-head">
+            <div><h1 id="welcome">Welcome Back</h1><p>Here's what needs your decision</p></div>
+          </div>
+
+          <div id="fin-error"></div>
+
+          <div class="fin" id="fin-body">
+            <section class="fin-kpis" id="cards" aria-label="Key figures"></section>
+
+            <div class="fin-row fin-row--top">
+              <section class="card fin-panel" id="approval-queue">
+                <header><h2>Approval queue</h2><p>Requests waiting for your decision, largest first</p></header>
+                <div id="queue"></div>
+              </section>
+
+              <section class="card fin-panel">
+                <header><h2>Spend by category</h2><p>Share of purchasing spend, last 30 days</p></header>
+                <div id="categories"></div>
+              </section>
+            </div>
+
+            <div class="fin-row fin-row--bottom">
+              <section class="card fin-panel">
+                <header><h2>Recent price changes</h2><p>Check these before approving</p></header>
+                <div id="prices"></div>
+              </section>
+
+              <section class="card fin-panel">
+                <header><h2>Spend alerts</h2><p>Supplier and quote issues</p></header>
+                <div id="alerts"></div>
+              </section>
+
+              <section class="card fin-panel" id="recent-decisions">
+                <header><h2>Recent decisions</h2><p>Approved and rejected requests</p></header>
+                <div id="decisions"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Review panel -->
+  <div class="fin-overlay" id="fin-overlay" hidden></div>
+  <aside class="card fin-drawer" id="fin-drawer" role="dialog" aria-modal="true" aria-labelledby="fin-ref" hidden>
+    <header class="fin-drawer__head">
+      <div><small>Review request</small><h2 id="fin-ref"></h2></div>
+      <button class="fin-btn" id="fin-close" type="button" aria-label="Close review panel">Close</button>
+    </header>
+    <div class="fin-drawer__body" id="fin-detail"></div>
+    <footer class="fin-drawer__foot">
+      <label class="sr-only" for="fin-reason">Decision note</label>
+      <textarea class="fin-reason" id="fin-reason" placeholder="Note for the record (required if rejecting)"></textarea>
+      <p class="fin-err" id="fin-reason-error" hidden></p>
+      <div class="fin-actions">
+        <button class="fin-btn fin-btn--reject" id="fin-reject" type="button">Reject</button>
+        <button class="fin-btn fin-btn--approve" id="fin-approve" type="button">Approve</button>
+      </div>
+    </footer>
+  </aside>
+  <div class="fin-toasts" id="fin-toasts" aria-live="polite"></div>
+
+  <script type="module" src="./index.js"></script>
+</body>
+</html>

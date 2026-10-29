@@ -1,0 +1,22 @@
+{
+  "kpis": { "totalSpend": 12806240, "spendChange": 12, "openRequests": 18, "needAttention": 5,
+            "pendingApprovals": 12, "awaitingFinance": 3, "awaitingDelivery": 5, "dueThisWeek": 2 },
+  "spend": { "total": 12806240, "averageMonthly": 2134373, "points": [
+    { "label": "Apr", "total": 1600000 }, { "label": "May", "total": 2400000 }, { "label": "Jun", "total": 3100000 },
+    { "label": "Jul", "total": 1900000 }, { "label": "Aug", "total": 2200000 }, { "label": "Sep", "total": 1606240 } ] },
+  "categories": [
+    { "name": "Ingredients", "total": 4500000 }, { "name": "Packaging", "total": 3100000 },
+    { "name": "Beverages", "total": 2300000 }, { "name": "Cleaning", "total": 1900000 }, { "name": "Others", "total": 1006240 } ],
+  "priceChanges": [
+    { "product": "Packaging Boxes", "supplier": "TechPack Ltd", "change": 9.4, "status": "Review" },
+    { "product": "Cooking Oil", "supplier": "FHSupply", "change": 6.8, "status": "Monitor" },
+    { "product": "Cleaning Liquid", "supplier": "CleanPRO", "change": -4.3, "status": "Normal" } ],
+  "alerts": [
+    { "type": "Delivery risk", "tone": "danger", "title": "TechSource Solutions", "text": "3 late deliveries in the last 5 orders" },
+    { "type": "Price increase", "tone": "warning", "title": "FHSupply Ltd", "text": "Current quote is 9% above historical average" },
+    { "type": "Quote coverage", "tone": "info", "title": "Packing RFQ", "text": "Only 2 of 4 invited suppliers responded" } ],
+  "activity": [
+    { "day": "Today", "items": [ { "title": "Purchase Request", "text": "Purchase request PR-00482 submitted", "time": "10:24am" } ] },
+    { "day": "Yesterday", "items": [ { "title": "Quote", "text": "Quote received from TechSource Solutions", "time": "3:18pm" } ] },
+    { "day": "Oct 01, 2026", "items": [ { "title": "Approval", "text": "Finance approved PR-00479", "time": "11:05am" } ] } ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purchase Requests | SourcingIQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../shared/css/tokens.css" />
+  <link rel="stylesheet" href="../../../shared/css/base.css" />
+  <link rel="stylesheet" href="../../../shared/css/components.css" />
+  <link rel="stylesheet" href="../../../shared/css/layout.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body data-title="Purchase Request">
+  <div class="shell">
+    <aside class="sidebar" id="sidebar"></aside>
+    <div class="main">
+      <header class="topbar" id="topbar"></header>
+      <main class="content">
+        <div class="page-head">
+          <div><h1>Purchase Requests</h1><p>Track and manage purchase requests across your organization</p></div>
+          <a class="btn btn--primary" id="create-btn" href="./new/index.html" hidden>+ Create request</a>
+        </div>
+
+        <section class="kpis" id="cards" aria-label="Request counts"></section>
+
+        <section class="card list-card">
+          <div class="filters">
+            <label class="sr-only" for="search">Search requests</label>
+            <input class="input-sm" id="search" type="search" placeholder="Search requests..." />
+            <label class="sr-only" for="status">Status</label>
+            <select class="input-sm" id="status"><option value="">All statuses</option></select>
+            <label class="sr-only" for="department">Department</label>
+            <select class="input-sm" id="department"><option value="">All departments</option></select>
+          </div>
+          <div id="list"></div>
+          <div id="pager"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
